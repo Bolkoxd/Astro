@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Shuffle questions array.
     questions.sort(() => Math.random() - 0.5);
 
-    let timeRemaining = 300; // 5 minutes = 300 seconds
+    let timeRemaining = 600; // 5 minutes = 300 seconds
     let timeStart = Date.now(); // Track when the test starts
     let isTimerSubmission = false; // Flag to track if submission is from timer
 
