@@ -34,7 +34,7 @@ document.getElementById('startTestBtn').addEventListener('click', function () {
     if (matchedTest1) {
         const lastAttemptTime = localStorage.getItem(`lastAttempt_${enteredCode1}`);
         const currentTime = Date.now();
-        const waitTime = 1; // 5 minutes in milliseconds
+        const waitTime = 300000; // 5 minutes in milliseconds
 
         if (lastAttemptTime) {
             const elapsedTime = currentTime - parseInt(lastAttemptTime, 10);
