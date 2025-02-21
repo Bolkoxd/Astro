@@ -3,27 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Test Portal</title>
+  <title>Astro Test</title>
   <style>
     /* Reset some basic styles */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+    body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      background-image: url('pexels.jpg');
-      background-size: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('nebula.jpg');
+    background-size: 100%;
     }
 
     /* Centering container for both sections */
     .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      text-align: center;
+      background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
     }
 
     /* Styling for input fields and button */
@@ -56,6 +57,10 @@
       margin-top: 10px;
       display: none;
     }
+
+    h2 {
+      color: #000000;
+    }
   </style>
 </head>
 <body>
@@ -66,6 +71,9 @@
     <input type="text" id="testCode1" placeholder="Enter Test Code" required />
     <button id="startTestBtn">Start Test</button>
     <p id="errorMsg" class="error">Invalid test code. Please try again.</p>
+    <p id="waitMsg" style="color: red; display: none; font-weight: bold;"></p>
+
+
   </div>
   <script src="student-interface.js"></script>
 </body>

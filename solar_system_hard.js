@@ -1,72 +1,90 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const questions = [
         {
-          question: "Ktoré z nasledujúcich objektov patria medzi vnútorné planéty slnečnej sústavy?",
-          correct: ["Merkúr", "Venuša", "Zem", "Mars"],
-          options: ["Merkúr", "Venuša", "Zem", "Mars", "Jupiter", "Saturn", "Kepler"],
-          points: 2
+            question: "Aký je názov najväčšieho známeho priepasťového útvaru v slnečnej sústave, nachádzajúceho sa na Marse?",
+            correct: "Valles Marineris",
+            options: ["Olympus Mons", "Valles Marineris", "Hellas Planitia", "Tharsis"],
+            points: 1 
         },
         {
-          question: "Ktoré z nasledujúcich planét majú prstence?",
-          correct: ["Saturn", "Jupiter", "Urán", "Neptún"],
-          options: ["Merkúr", "Venuša", "Saturn", "Jupiter", "Urán", "Neptún", "Pluto", "Titan", "Phobos", "Deimos", "Io", "Ganymedes"],
-          points: 2
+            question: "Aký je hlavný komponent atmosféry Venuše?",
+            correct: "Oxid uhličitý",
+            options: ["Oxid uhličitý", "Dusík", "Metán", "Kyslík", "Amoniak", "Vodík"],
+            points: 1
         },
         {
-          question: "Ktorá planéta má najnižšiu hustotu?",
-          correct: "Saturn",
-          options: ["Jupiter", "Saturn", "Uranus", "Neptún", "Venuša", "Zem"],
-          points: 1
+            question: "Ktorý z nasledujúcich javov je spôsobený orbitálnou rezonanciou medzi telesami v Slnečnej sústave?",
+            correct: "Dráhová rezonancia medzi mesiacmi Jupitera",
+            options: [
+                "Dráhová rezonancia medzi mesiacmi Jupitera",
+                "Pomer obežných dôb Zeme a Venuše",
+                "Gravitačné vlny vyžarované Slnkom",
+                "Magnetické búrky na povrchu Slnka",
+                "Skupinové usporiadanie planét počas konjunkcie"
+            ],
+            points: 1
         },
         {
-          question: "Ktoré z nasledujúcich objektov sa oficiálne považujú za trpasličie planéty?",
-          correct: ["Pluto", "Ceres"],
-          options: ["Pluto", "Ceres", "Deimos", "Proxima Centauri b", "Miller", "Sedna"],
-          points: 2
+            question: "Ktorá planéta v slnečnej sústave má najvyšší sklon rotácie?",
+            correct: "Urán",
+            options: ["Jupiter", "Neptún", "Saturn", "Urán", "Mars", "Pluto"],
+            points: 1
         },
         {
-          question: "Ktorá oblasť slnečnej sústavy sa nachádza medzi obežnými dráhami Marsu a Jupitera?",
-          correct: "Pás asteroidov",
-          options: ["Kuiperov pás", "Pás asteroidov", "Oortov oblak", "Heliosféra", "Vnútorný slnečný obal"],
-          points: 1
+            question: "Ako sa nazýva najväčšia medzera medzi prstenecmi Saturna?",
+            correct: "Cassiniho medzera",
+            options: ["Cassiniho medzera", "Maxwellova medzera", "Huygensova medzera", "Keelerova medzera", "Columbova medzera"],
+            points: 1
         },
         {
-          question: "Ktorý mesiac slnečnej sústavy je najväčší?",
-          correct: "Ganymedes",
-          options: ["Titan", "Ganymedes", "Callisto", "Io", "Triton", "Europa"],
-          points: 1
+            question: "Kde sa nachádza Oortov oblak?",
+            correct: "Na okraji slnečnej sústavy",
+            options: ["Na okraji slnečnej sústavy", "Medzi Marsom a Jupiterom", "Medzi Jupiterom a Saturnom", "V blízkosti Slnka", "Medzi dráhami Pluta a Neptúnu"],
+            points: 1
         },
         {
-          question: "Ktorý prvok sa vyskytuje v najväčšom množstve v slnečnej sústave?",
-          correct: "Vodik",
-          options: ["Vodik", "Helium", "Kyslík", "Uhlík", "Dusík", "Železo"],
-          points: 1
+            question: "Predpokladaj, že polomer Zeme je približne 6 378 km a doba rotácie je 24 hodín. Akou rýchlosťou sa Zem otáča?",
+            correct: "0,463 km/s",
+            options: ["0,455 km/s", "0,462 km/s", "0,475 km/s", "0,473 km/s", "0,463 km/s"],
+            points: 4 
         },
         {
-          question: "Ako sa nazýva hranica medzi heliosférou a medzihviezdnym priestorom?",
-          correct: "Heliopauza",
-          options: ["Heliosféra", "Heliopauza", "Kuiperov pás", "Oortov oblak", "Pás asteroidov"],
-          points: 1
+            question: "Vypočítajte únikovú rýchlosť pre mesiac Deimos. Predpokladajte, že hmotnosť Deimosu je 2.244×10^15kg a jeho polomer je 6.2km. Gravitačná konštanta je G=6.67430×10^−11 m^3⋅kg^−1⋅s^−2.",
+            correct: "6,95 m/s", 
+            options: ["6,95 m/s", "3,87 m/s", "7,24 m/s", "11,35 m/s", "9,11 m/s", "5,62 m/s"],
+            points: 4 
         },
         {
-          question: "Ktorá planéta má najvyššiu teplotu?",
-          correct: "Venuša",
-          options: ["Merkúr", "Venuša", "Mars", "Zem", "Jupiter", "Saturn"],
-          points: 1
+            question: "Ktoré z nasledujúcich tvrdení sú pravdivé o Kuiperovom páse?",
+            correct: ["Kuiperov pás sa nachádza za obežnou dráhou Neptúna.", "Kuiperov pás obsahuje trpasličie planéty ako Pluto a Eris.", "Kuiperov pás je zdrojom krátkoperiodických komét."],
+            options: [
+                "Kuiperov pás sa nachádza za obežnou dráhou Neptúna.",
+                "Kuiperov pás obsahuje trpasličie planéty ako Pluto a Eris.",
+                "Kuiperov pás je zdrojom krátkoperiodických komét.",
+                "Kuiperov pás je bližšie k Slnku ako asteroidový pás.",
+                "Kuiperov pás je tvorený hlavne kovovými asteroidmi."
+            ],
+            points: 2
         },
         {
-          question: "Ktorý z nasledujúcich objektov má veľmi excentrickú eliptickú trajektóriu?",
-          correct: "Sedna",
-          options: ["Pluto", "Eris", "Sedna", "Haumea", "Makemake", "Ceres"],
-          points: 1
+            question: "Ktoré faktory najviac ovplyvňujú, či planéta udrží hustú atmosféru dlhodobo?", 
+            correct: ["Gravitačná sila planéty", "Teplota planéty"],
+            options: [
+                "Gravitačná sila planéty",
+                "Teplota planéty",
+                "Počet mesiacov planéty",
+                "Magnetické pole planéty",
+                "Vzdialenosť planéty od Slnka",
+                "Rotácia planéty"
+            ],
+            points: 2
         }
     ];
       
     // Shuffle questions array.
     questions.sort(() => Math.random() - 0.5);
 
-    let timeRemaining = 600; // 10 minutes = 600 seconds
+    let timeRemaining = 1200; // 20 minutes = 1200 seconds
     let timeStart = Date.now(); // Track when the test starts
     let isTimerSubmission = false; // Flag to track if submission is from timer
     let isVisibilitySubmission = false; // New flag for visibility-based submission

@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('pexels.jpg');
+    background-image: url('nebula.jpg');
     background-size: 100%;
   }
   
@@ -22,7 +22,7 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 300px;
+    width: 300x;
   }
   
   h1 {
