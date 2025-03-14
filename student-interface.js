@@ -10,52 +10,63 @@ document.getElementById('startTestBtn').addEventListener('click', function () {
     const studentName = document.getElementById('studentName').value.trim();
     const enteredCode1 = document.getElementById('testCode1').value.trim();
     const errorMsg = document.getElementById('errorMsg');
-    const waitMsg = document.getElementById('waitMsg'); // Element for the wait message
+    const waitMsg = document.getElementById('waitMsg');
 
-    errorMsg.style.display = 'none'; // Hide previous error
-    waitMsg.style.display = 'none'; // Hide wait message
+    // Reset previous messages
+    errorMsg.style.display = 'none';
+    waitMsg.style.display = 'none';
 
-    if (studentName === "") {
-        waitMsg.style.display = 'block';
-        waitMsg.innerHTML = "⚠️ Please enter your name before starting the test.";
+    if (!studentName) {
+        displayWaitMessage("⚠️ Please enter your name before starting the test.");
         return;
     }
 
-    let matchedTest1 = null;
-    for (const key1 in testCodes) {
-        if (testCodes[key1].code === enteredCode1) {
-            matchedTest1 = testCodes[key1].testPage;
-            break;
-        }
-    }
-
+    const matchedTest1 = getTestPageFromCode(enteredCode1);
     if (matchedTest1) {
-        const lastAttemptTime = localStorage.getItem(`lastAttempt_${enteredCode1}`);
-        const currentTime = Date.now();
-        const waitTime = 300000; // 5 minutes in milliseconds
-
-        if (lastAttemptTime) {
-            const elapsedTime = currentTime - parseInt(lastAttemptTime, 10);
-
-            if (elapsedTime < waitTime) {
-                const remainingTime = waitTime - elapsedTime;
-                const minutes = Math.floor(remainingTime / 60000);
-                const seconds = Math.ceil((remainingTime % 60000) / 1000);
-
-                waitMsg.style.display = 'block';
-                waitMsg.innerHTML = `⏳ You must wait <b>${minutes} minute(s) and ${seconds} second(s)</b> before retaking the test.`;
-                return;
-            }
-        }
-
-        // Store student name, test code, and the attempt timestamp
-        localStorage.setItem("studentName", studentName);
-        localStorage.setItem("testTaken", enteredCode1);
-        localStorage.setItem(`lastAttempt_${enteredCode1}`, currentTime.toString());
-
-        // Redirect to the correct test file
-        window.location.href = matchedTest1;
+        handleTestAttempt(enteredCode1, studentName, matchedTest1);
     } else {
         errorMsg.style.display = 'block';
     }
 });
+
+function getTestPageFromCode(code) {
+    for (const key in testCodes) {
+        if (testCodes[key].code === code) {
+            return testCodes[key].testPage;
+        }
+    }
+    return null;
+}
+
+function handleTestAttempt(testCode, studentName, testPage) {
+    const lastAttemptTime = localStorage.getItem(`lastAttempt_${testCode}`);
+    const currentTime = Date.now();
+    const waitTime = 300000; // 5 minutes in milliseconds
+
+    if (lastAttemptTime) {
+        const elapsedTime = currentTime - parseInt(lastAttemptTime, 10);
+
+        if (elapsedTime < waitTime) {
+            const remainingTime = waitTime - elapsedTime;
+            const minutes = Math.floor(remainingTime / 60000);
+            const seconds = Math.ceil((remainingTime % 60000) / 1000);
+
+            displayWaitMessage(`⏳ You must wait <b>${minutes} minute(s) and ${seconds} second(s)</b> before retaking the test.`);
+            return;
+        }
+    }
+
+    // Store student details and test attempt info
+    localStorage.setItem("studentName", studentName);
+    localStorage.setItem("testTaken", testCode);
+    localStorage.setItem(`lastAttempt_${testCode}`, currentTime.toString());
+
+    // Redirect to the appropriate test page
+    window.location.href = testPage;
+}
+
+function displayWaitMessage(message) {
+    const waitMsg = document.getElementById('waitMsg');
+    waitMsg.style.display = 'block';
+    waitMsg.innerHTML = message;
+}
