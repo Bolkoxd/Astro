@@ -7,10 +7,8 @@ const testCodes = {
   "solar_system_easy": { code: "AKJ8B6", testPage: "results.html" },
   "solar_system_medium": { code: "KDP83B", testPage: "results.html" },
   "solar_system_hard": { code: "I73VVJ", testPage: "results.html" },
-  "planets_easy": { code: "LMN789", testPage: "results.html" },
-  "planets_medium": { code: "PQR012", testPage: "results.html" },
-  "stars_easy": { code: "STU345", testPage: "results.html" },
-  "stars_medium": { code: "VWX678", testPage: "results.html" }
+  "History_easy": { code: "L9M13", testPage: "results.html" },
+  "things_easy": { code: "D8201A", testPage: "results.html" },
 };
 
 // Step 2: Show the test code when the button is clicked

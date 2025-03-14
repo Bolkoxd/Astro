@@ -2,10 +2,8 @@ const testCodes = {
     "solar_system_easy": { code: "AKJ8B6", testPage: "solar_system_easy.html" },
     "solar_system_medium": { code: "KDP83B", testPage: "solar_system_medium.html" },
     "solar_system_hard": { code: "I73VVJ", testPage: "solar_system_hard.html" },
-    "planets_easy": { code: "LMN789", testPage: "planets_easy.html" },
-    "planets_medium": { code: "PQR012", testPage: "planets_medium.html" },
-    "stars_easy": { code: "STU345", testPage: "stars_easy.html" },
-    "stars_medium": { code: "VWX678", testPage: "stars_medium.html" }
+    "History_easy": { code: "L9M13", testPage: "History_easy.html" },
+    "things_easy": { code: "D8201A", testPage: "nastroje_easy.html" },
 };
 
 document.getElementById('startTestBtn').addEventListener('click', function () {
@@ -34,7 +32,7 @@ document.getElementById('startTestBtn').addEventListener('click', function () {
     if (matchedTest1) {
         const lastAttemptTime = localStorage.getItem(`lastAttempt_${enteredCode1}`);
         const currentTime = Date.now();
-        const waitTime = 300000; // 5 minutes in milliseconds
+        const waitTime = 1; // 5 minutes in milliseconds
 
         if (lastAttemptTime) {
             const elapsedTime = currentTime - parseInt(lastAttemptTime, 10);
