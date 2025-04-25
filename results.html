@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Results</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-xl mx-auto bg-white shadow-lg rounded-lg p-6" id="container2">
+    <h2 class="text-xl font-bold text-gray-800 mb-4">Test Results</h2>
+    <div id="results-list" class="space-y-4"></div>
+  </div>
+  <style>
+    body {
+      background-image: url('nebula.jpg');
+      background-size: 100%;
+    }
+  </style>
+
+  <script>
+    function loadResults() {
+      let results = JSON.parse(localStorage.getItem("testResults")) || [];
+      let resultsList = document.getElementById("results-list");
+      resultsList.innerHTML = "";
+      
+      // Reverse to show latest results at the top
+      results.reverse().forEach(result => {
+        let resultDiv = document.createElement("div");
+        resultDiv.classList.add("p-4", "bg-gray-50", "rounded-lg", "shadow-sm");
+        resultDiv.innerHTML = `
+          <p><strong>Name:</strong> ${result.name}</p>
+          <p><strong>Test Code:</strong> ${result.testCode}</p>
+          <p><strong>Score:</strong> ${result.score} / 10 (${result.percentage})</p>
+          <p><strong>Time Spent:</strong> ${result.time}</p>
+          <p><strong>Date:</strong> ${result.date}</p>
+        `;
+        resultsList.appendChild(resultDiv);
+      });
+    }
+    // Load results when the page loads
+    window.onload = loadResults;
+  </script>
+</body>
+</html>

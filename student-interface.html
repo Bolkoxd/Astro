@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astro Test</title>
+  <style>
+    /* Reset some basic styles */
+    body {
+      font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('nebula.jpg');
+    background-size: 100%;
+    }
+
+    /* Centering container for both sections */
+    .container {
+      background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    }
+
+    /* Styling for input fields and button */
+    input {
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      margin: 10px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+      display: none;
+    }
+
+    h2 {
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Student Entry Form -->
+  <div class="container" id="loginFormContainer">
+    <h2>Enter Your Details</h2>
+    <input type="text" id="studentName" placeholder="Your Name" required />
+    <input type="text" id="testCodeInput" placeholder="Enter Test Code" required />
+    <button id="startTestBtn">Start Test</button>
+    <p id="errorMsg" class="error">Invalid test code. Please try again.</p>
+    <p id="waitMsg" style="color: red; display: none; font-weight: bold;"></p>
+
+
+  </div>
+  <script src="student-interface.js"></script>
+</body>
+</html>

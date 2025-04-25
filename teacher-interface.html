@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Website</title>
+  <link rel="stylesheet" href="teacher-interface.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Test Website</h1>
+
+    <!-- Test Selection Section -->
+    <div id="testSelection">
+      <h2>Select Test</h2>
+      <label for="topic">Topic:</label>
+      <select id="topic">
+        <option value="solar_system">Slnečná sústava</option>
+        <option value="History">Históría</option>
+        <option value="things">Nástroje</option>
+      </select>
+
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <button id="showCode">Show Test Code</button>
+      <p id="testCodeDisplay"></p>
+    </div>
+
+    <!-- Show Results Button -->
+    <div id="testCodeSection">
+      <button id="startTest">Show results</button>
+    </div>
+  </div>
+  <div id="testCodeDisplay"></div>
+
+  <script src="teacher-interface.js"></script>
+</body>
+</html>
