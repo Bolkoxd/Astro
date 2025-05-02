@@ -1,18 +1,15 @@
-// --- Keep the testCodes object as is ---
 const testCodes = {
     "solar_system_easy": { code: "AKJ8B6", testPage: "Test.html" },
-    "solar_system_medium": { code: "KDP83B", testPage: "Test.html" }, // Example: Added medium difficulty
-    "solar_system_hard": { code: "I73VVJ", testPage: "Test.html" }, // Example: Added hard difficulty
-    "History_easy": { code: "L9M13", testPage: "Test.html" }, // Example: Added History
-    "things_easy": { code: "D8201A", testPage: "Test.html" }, // Example: Added Things
+    "solar_system_medium": { code: "KDP83B", testPage: "Test.html" }, 
+    "solar_system_hard": { code: "I73VVJ", testPage: "Test.html" }, 
+    "History_easy": { code: "L9M13", testPage: "Test.html" }, 
+    "Devices_easy": { code: "D8201A", testPage: "Test.html" }, 
+    "Astronomy_easy": { code: "Z1L6PA", testPage: "Test.html" }
 };
 
 document.getElementById('startTestBtn').addEventListener('click', function () {
     const studentName = document.getElementById('studentName').value.trim();
-    // **IMPORTANT**: Ensure your input field ID matches. If you have multiple code inputs,
-    // you'll need logic to determine which one was filled or use a single input.
-    // Assuming a single input field with id="testCodeInput" for simplicity now.
-    const enteredCode = document.getElementById('testCodeInput').value.trim(); // Use a general ID
+    const enteredCode = document.getElementById('testCodeInput').value.trim(); 
     const errorMsg = document.getElementById('errorMsg');
     const waitMsg = document.getElementById('waitMsg');
 
@@ -58,7 +55,7 @@ function findTestByCode(code) {
 function handleTestAttempt(testCode, studentName, testPage) { // testCode is the actual code like "AKJ8B6"
     const lastAttemptTime = localStorage.getItem(`lastAttempt_${testCode}`);
     const currentTime = Date.now();
-    const waitTime = 0; // 5 minutes in milliseconds
+    const waitTime = 300000; // 300000 == 5 minutes in milliseconds
 
     if (lastAttemptTime) {
         const elapsedTime = currentTime - parseInt(lastAttemptTime, 10);
@@ -94,3 +91,5 @@ function displayWaitMessage(message) {
 
 // **Important**: Make sure your HTML has an input field with id="testCodeInput"
 // <input type="text" id="testCodeInput" placeholder="Enter Test Code">
+
+    

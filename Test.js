@@ -1,6 +1,5 @@
-// Define all possible tests keyed by their unique code
 const allTests = {
-    "AKJ8B6": { // Corresponds to solar_system_easy
+    "AKJ8B6": { 
         timeLimit: 300, // 5 minutes
         questions: [
             {
@@ -347,9 +346,99 @@ const allTests = {
             }            
 
         ]
+    },
+    "Z1L6PA": { // Corresponds to Astronomy_easy
+        timeLimit: 600, // 10 minutes
+        questions: [
+             {
+                 question: "Čo je najväčšia známa štruktúra vo vesmíre?",
+                 correct: "Veľká stena Herkules-Koróna Borealis",
+                 options: ["Galaxia Mliečna cesta", "Veľká stena Herkules-Koróna Borealis", "Kopa galaxií v Panne", "Hmlovina Tarantula"],
+                 points: 2
+             },
+             {
+                 question: "Čo je to čierna diera?",
+                 correct: " Oblasť priestoru s takou silnou gravitáciou, že z nej nemôže uniknúť nič, ani svetlo",
+                 options: [" Chladná hviezda, ktorá nevyžaruje svetlo", 
+                           " Oblasť priestoru s takou silnou gravitáciou, že z nej nemôže uniknúť nič, ani svetlo", 
+                           "Planéta zložená z tmavej hmoty",
+                           "Typ galaxie s veľmi nízkou svietivosťou"],
+                 points: 2
+             },
+             {
+                 question: "Ktorý z nasledujúcich javov je dôsledkom zemskej rotácie?",
+                 correct: "Striedanie dňa a noci",
+                 options: ["Striedanie ročných období", "Príliv a odliv", "Striedanie dňa a noci", "Zatmenie Slnka"],
+                 points: 2
+             },
+             {
+                 question: "Ako sa nazýva naša galaxia?",
+                 correct: "Mliečna cesta",
+                 options: ["Andromeda", "Triangulum", "Mliečna cesta", "Sombrero", "Centaurus A", "Veľký Magellanov mrak"],
+                 points: 1
+             },
+             {
+                 question: "Čo je to supernova?",
+                 correct: "Explózia hviezdy na konci jej života",
+                 options: ["Bežný zánik malej hviezdy", "Explózia hviezdy na konci jej života", "Zrážka dvoch planét", "Vznik novej galaxie"],
+                 points: 2
+             },
+             {
+                 question: "Čo je to asteroid?",
+                 correct: "Skalnaté teleso obiehajúce okolo Slnka, menšie ako planéta",
+                 options: ["Malé ľadové teleso obiehajúce okolo Slnka", 
+                           "Veľké plynné teleso mimo slnečnej sústavy", 
+                           "Skalnaté teleso obiehajúce okolo Slnka, menšie ako planéta", 
+                           "Planéta obiehajúca okolo Slnka"],
+                 points: 2
+             },
+             {
+                 question: "Čo je to červený posun?",
+                 correct: "Posun spektrálnych čiar svetla vzdialených galaxií smerom k červenému koncu spektra v dôsledku rozpínania vesmíru",
+                 options: ["Posun spektrálnych čiar svetla vzdialených galaxií smerom k červenému koncu spektra v dôsledku rozpínania vesmíru", 
+                           "Zmena farby hviezdy na červenú pri jej zahrievaní", 
+                           "Optický klam spôsobený zemskou atmosférou", 
+                           "Jav pozorovaný len pri veľmi jasných hviezdach"],
+                 points: 2
+             },
+             {
+                 question: "Ako sa nazýva naša najbližšia hviezda okrem Slnka?",
+                 correct: "Proxima Centauri",
+                 options: ["Sírius", "Proxima Centauri", "Betelgeuse", "Vega", "Luhman 16", "UY Scuti", "Stephenson 2-18"],
+                 points: 2
+             },
+             {
+                 question: "Čo je to hmlovina?",
+                 correct: "Oblak plynu a prachu v medzihviezdnom priestore",
+                 options: ["Skupina mnohých hviezd, ktoré sú blízko seba", "Oblak plynu a prachu v medzihviezdnom priestore", "Malá galaxia obiehajúca okolo väčšej galaxie", "Pozostatok po zrážke dvoch planét"],
+                 points: 2
+             },
+             {
+                 question: "Ktorý mesiac je známy svojimi jazerami a morami tekutého metánu a etánu",
+                 correct: "Titan",
+                 options: ["Európa", "Titan", "Io", "Ganymedes", "Mesiac", "Luna", "Callisto"],
+                 points: 2
+             },
+             {
+                 question: "Čo je to exoplanéta?",
+                 correct: ["Planéta, ktorá obieha okolo inej hviezdy ako Slnka", "Planéta, ktorá sa nachádza mimo našej galaxie", "Planéta, ktorá sa nenachádza v Slnečnej sústave"], // Note: Adjusted this based on options, assuming multiple answers are possible interpretations
+                 options: ["Planéta, ktorá obieha okolo inej hviezdy ako Slnka",
+                           "Planéta v našej slnečnej sústave, ktorá bola objavená len nedávno", 
+                           "Malé teleso podobné planéte, ktoré obieha okolo inej planéty",
+                           "Planéta, ktorá sa nachádza mimo našej galaxie", 
+                           "Planéta, ktorá sa nenachádza v Slnečnej sústave"],
+                 points: 2
+             },
+             {
+                 question: "Aké sú hlavné zložky typickej kométy?",
+                 correct: ["Ľad", "Prach", "Plyn"],
+                 options: ["Skaly", "Ľad", "Prach", "Plyn", "Kovové jadro", "Piesok", "diamant"],
+                 points: 2
+             },
+        ]
     }
-    // Add other test codes and their corresponding question arrays here
 };
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -373,25 +462,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let timeRemaining = currentTest.timeLimit; // Use the time limit specific to this test
 
     // --- REST OF YOUR Test.js CODE ---
-    // IMPORTANT: Replace all instances of the old 'questions' variable
-    // with 'currentTestQuestions'
-
     // Shuffle the selected questions array.
     currentTestQuestions.sort(() => Math.random() - 0.5);
 
-    // let timeRemaining = 1200; // REMOVED - Now set from currentTest.timeLimit above
     let timeStart = Date.now();
     let isTimerSubmission = false;
     let isVisibilitySubmission = false;
+    let hasSubmitted = false; // Flag to prevent multiple submissions
+    let userAnswersDetailed = []; // <--- *** NEW: To store detailed answers ***
 
     const timerDisplay = document.getElementById('timer-display');
 
     function startTimer() {
-        // Update display immediately
         timerDisplay.textContent = `Time remaining: ${Math.floor(timeRemaining / 60)}:${(timeRemaining % 60).toString().padStart(2, '0')}`;
-
         const interval = setInterval(function () {
-            if (isTimerSubmission || isVisibilitySubmission) { // Stop timer if already submitted
+            if (hasSubmitted) { // Use the main submission flag
                  clearInterval(interval);
                  return;
             }
@@ -408,7 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("visibilitychange", function () {
         // Only submit if the test hasn't been submitted by timer or manually already
-        if (document.visibilityState === "hidden" && !isTimerSubmission && !isVisibilitySubmission && !document.querySelector(".result-section")) { // Added check for result section
+        if (document.visibilityState === "hidden" && !hasSubmitted && !document.querySelector(".result-section")) {
             isVisibilitySubmission = true;
             console.log("Visibility changed, submitting test."); // Debug log
             submitTest();
@@ -416,56 +501,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function getRandomOptions(correct, allOptions) {
-         // --- Keep this function as is, it works on the options of a single question ---
-         // ... (your existing getRandomOptions function code) ...
-         // If options are 6 or fewer, return all of them shuffled.
-         if (allOptions.length <= 5) { // Use 5, as 6 options total means slice(0, 5) grabs indices 0-4
-             return allOptions.sort(() => Math.random() - 0.5);
-         } else {
-             // More than 6 options available.
-             if (Array.isArray(correct)) {
-                 // For multiple-answer questions:
-                 let correctSet = [...correct]; // Clone to avoid modifying original
-                 let incorrectOptions = allOptions.filter(opt => !correctSet.includes(opt));
-                 // Shuffle the incorrect options.
-                 incorrectOptions.sort(() => Math.random() - 0.5);
-                 // We want exactly 6 options total if possible
-                 let neededIncorrect = 6 - correctSet.length;
+        // --- Keep this function as is ---
+        if (allOptions.length <= 6) { // Adjusted to 6 for clarity if we *want* max 6
+            return allOptions.sort(() => Math.random() - 0.5);
+        } else {
+            const numOptionsToDisplay = 6;
+            if (Array.isArray(correct)) {
+                let correctSet = [...correct];
+                let incorrectOptions = allOptions.filter(opt => !correctSet.includes(opt));
+                incorrectOptions.sort(() => Math.random() - 0.5);
 
-                 // If there are 6 or more correct answers, just take the first 6 shuffled correct answers
-                 if (neededIncorrect <= 0) {
-                     return correctSet.sort(() => Math.random() - 0.5).slice(0, 6);
-                 }
+                let neededIncorrect = numOptionsToDisplay - correctSet.length;
 
-                 // Ensure we don't try to slice more incorrect options than available
-                 neededIncorrect = Math.min(neededIncorrect, incorrectOptions.length);
+                if (neededIncorrect <= 0) {
+                    return correctSet.sort(() => Math.random() - 0.5).slice(0, numOptionsToDisplay);
+                }
 
-                 let selectedIncorrect = incorrectOptions.slice(0, neededIncorrect);
-                 let combined = correctSet.concat(selectedIncorrect);
-                 // Shuffle the final combined list of 6 options
-                 return combined.sort(() => Math.random() - 0.5);
+                neededIncorrect = Math.min(neededIncorrect, incorrectOptions.length);
+                let selectedIncorrect = incorrectOptions.slice(0, neededIncorrect);
+                let combined = correctSet.concat(selectedIncorrect);
+                return combined.sort(() => Math.random() - 0.5);
 
-             } else {
-                 // For single-answer questions:
-                 // Need 5 incorrect + 1 correct = 6 total
-                 let incorrectOptions = allOptions.filter(opt => opt !== correct);
-                 incorrectOptions.sort(() => Math.random() - 0.5);
+            } else {
+                let incorrectOptions = allOptions.filter(opt => opt !== correct);
+                incorrectOptions.sort(() => Math.random() - 0.5);
 
-                 // Ensure we don't try to slice more incorrect options than available
-                 let selectedIncorrect = incorrectOptions.slice(0, Math.min(5, incorrectOptions.length));
-
-                 let selectedOptions = [correct, ...selectedIncorrect];
-                 // Shuffle the final list
-                 return selectedOptions.sort(() => Math.random() - 0.5);
-             }
-         }
+                // Need numOptionsToDisplay - 1 incorrect options
+                let neededIncorrect = numOptionsToDisplay - 1;
+                let selectedIncorrect = incorrectOptions.slice(0, Math.min(neededIncorrect, incorrectOptions.length));
+                let selectedOptions = [correct, ...selectedIncorrect];
+                return selectedOptions.sort(() => Math.random() - 0.5);
+            }
+        }
      }
 
     function displayQuestions() {
         const container = document.querySelector(".container");
         container.innerHTML = ""; // Clear previous content.
 
-        // --- Use currentTestQuestions ---
         currentTestQuestions.forEach((q, index) => {
             const options = getRandomOptions(q.correct, q.options);
             const inputType = Array.isArray(q.correct) ? "checkbox" : "radio";
@@ -473,10 +546,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="question-container" id="question${index + 1}" style="display: ${index === 0 ? 'block' : 'none'};">
                     <h1>${index + 1}/${currentTestQuestions.length}</h1>
                     <h1>${q.question}</h1>
-                    <form>
                         ${options.map(option => `<label><input type="${inputType}" name="answer${index + 1}" value="${option.replace(/"/g, '&quot;')}"> ${option}</label>`).join("<br>")}
                         <div class="navigation-buttons">
-                         ${index > 0 ? `<button type="button" class="prev-btn">Previous</button>` : ""}
+                         ${index > 0 ? `<button type="button" class="prev-btn">Previuos</button>` : ""}
                          ${index < currentTestQuestions.length - 1 ? `<button type="button" class="next-btn">Next</button>` : ""}
                          ${index === currentTestQuestions.length - 1 ? `<button type="button" class="submit">Submit</button>` : ""}
                         </div>
@@ -490,7 +562,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setupNavigation() {
         let currentQuestionIndex = 0; // Use 0-based index internally
-        // --- Use currentTestQuestions ---
         const totalQuestions = currentTestQuestions.length;
 
         function showQuestion(indexToShow) { // indexToShow is 0-based
@@ -516,22 +587,58 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // Ensure the submit button listener is attached correctly
-         const submitButton = document.querySelector(".submit");
-         if (submitButton) {
+        const submitButton = document.querySelector(".submit");
+        if (submitButton) {
              submitButton.addEventListener("click", function () {
-                // Set flags to prevent double submission from visibility change
-                isTimerSubmission = false; // Manual submission overrides timer/visibility flags for message logic
-                isVisibilitySubmission = false;
-                submitTest();
+                 // Clear timer/visibility flags for message logic if manually submitted
+                 const wasTimer = isTimerSubmission;
+                 const wasVis = isVisibilitySubmission;
+                 isTimerSubmission = false;
+                 isVisibilitySubmission = false;
+                 // Ask for confirmation if unanswered questions exist
+                 let unanswered = checkUnanswered();
+                 if (unanswered.length > 0) {
+                     const proceed = confirm(`Nezodpovedali ste ${unanswered.length} otázok: ${unanswered.join(", ")}. Chcete napriek tomu odovzdať test?`);
+                     if (!proceed) {
+                         // Restore original flags if user cancels
+                         isTimerSubmission = wasTimer;
+                         isVisibilitySubmission = wasVis;
+                         return; // Stop submission
+                     }
+                 }
+                 // If confirmed or no unanswered, proceed to submit
+                 submitTest();
              });
-         } else {
+        } else {
              console.error("Submit button not found. Ensure the last question includes it.");
-         }
+        }
     }
 
+    // Helper function to check for unanswered questions without submitting
+    function checkUnanswered() {
+        let unansweredIndexes = [];
+        for (let i = 0; i < currentTestQuestions.length; i++) {
+            const currentQuestion = currentTestQuestions[i];
+            const questionIndexForName = i + 1;
+            let isAnswered = false;
+            if (Array.isArray(currentQuestion.correct)) {
+                let selectedElements = document.querySelectorAll(`input[name="answer${questionIndexForName}"]:checked`);
+                if (selectedElements.length > 0) {
+                    isAnswered = true;
+                }
+            } else {
+                const selectedAnswer = document.querySelector(`input[name="answer${questionIndexForName}"]:checked`);
+                if (selectedAnswer) {
+                    isAnswered = true;
+                }
+            }
+            if (!isAnswered) {
+                unansweredIndexes.push(questionIndexForName);
+            }
+        }
+        return unansweredIndexes;
+    }
 
-    let hasSubmitted = false; // Flag to prevent multiple submissions
 
     function submitTest() {
         // Prevent multiple submissions
@@ -542,27 +649,29 @@ document.addEventListener("DOMContentLoaded", function () {
         hasSubmitted = true; // Set flag immediately
         console.log("SubmitTest called. isTimer:", isTimerSubmission, "isVisibility:", isVisibilitySubmission); // Debug log
 
+        // --- Stop the timer explicitly ---
+        // Set a flag or clear interval if needed, handled by hasSubmitted check in timer now
 
-        let unanswered = [];
         let score = 0;
-        // const studentName = localStorage.getItem("studentName"); // Already fetched at the top
-        const takenTestCode = localStorage.getItem("currentTestCode"); // Get the code of the test being submitted
+        userAnswersDetailed = []; // Clear previous detailed answers if any
+        const takenTestCode = testCode; // Use the validated test code
 
-        // --- Use currentTestQuestions ---
+        // Loop through questions to calculate score AND store detailed answers
         for (let i = 0; i < currentTestQuestions.length; i++) {
             const currentQuestion = currentTestQuestions[i];
             const questionIndexForName = i + 1; // For input name="answerX"
+            let isCorrect = false;
+            let userAnswer = null;
+            let questionScore = 0;
 
             if (Array.isArray(currentQuestion.correct)) {
                 // Multiple correct answers (checkboxes)
                 let selectedElements = document.querySelectorAll(`input[name="answer${questionIndexForName}"]:checked`);
                 let selectedAnswers = Array.from(selectedElements).map(el => el.value);
+                userAnswer = selectedAnswers.length > 0 ? selectedAnswers : null; // Store array or null
 
-                if (selectedAnswers.length === 0) {
-                    unanswered.push(questionIndexForName);
-                } else {
-                    // Calculate score for multiple choice: (correctly selected - incorrectly selected) / total correct * points
-                    let correctSet = new Set(currentQuestion.correct); // Use Set for efficient lookup
+                if (selectedAnswers.length > 0) {
+                    let correctSet = new Set(currentQuestion.correct);
                     let numCorrectSelected = 0;
                     let numWrongSelected = 0;
 
@@ -574,41 +683,43 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     });
 
-                    // Ensure score doesn't go below zero for the question
-                    let questionScore = Math.max(0, (numCorrectSelected - numWrongSelected)) / currentQuestion.correct.length * currentQuestion.points;
+                    // Calculate points for this question
+                    questionScore = Math.max(0, (numCorrectSelected - numWrongSelected)) / currentQuestion.correct.length * currentQuestion.points;
                     score += questionScore;
-                    // console.log(`Q${questionIndexForName}: Correct=${numCorrectSelected}, Wrong=${numWrongSelected}, Total Correct=${currentQuestion.correct.length}, Points=${currentQuestion.points}, Score Added=${questionScore.toFixed(2)}`);
 
+                    // Determine correctness for display (strict: all correct selected, no incorrect selected)
+                    isCorrect = numCorrectSelected === currentQuestion.correct.length && numWrongSelected === 0;
                 }
+                 // else: Unanswered, isCorrect remains false, score doesn't increase
+
             } else {
                 // Single correct answer (radio buttons)
-                const selectedAnswer = document.querySelector(`input[name="answer${questionIndexForName}"]:checked`);
-                if (!selectedAnswer) {
-                    unanswered.push(questionIndexForName);
-                } else if (selectedAnswer.value === currentQuestion.correct) {
-                    score += currentQuestion.points;
-                     // console.log(`Q${questionIndexForName}: Correct. Score Added=${currentQuestion.points}`);
-                } else {
-                    // console.log(`Q${questionIndexForName}: Incorrect. Selected=${selectedAnswer.value}, Correct=${currentQuestion.correct}`);
+                const selectedElement = document.querySelector(`input[name="answer${questionIndexForName}"]:checked`);
+                userAnswer = selectedElement ? selectedElement.value : null; // Store string or null
+
+                if (selectedElement) {
+                    if (selectedElement.value === currentQuestion.correct) {
+                        questionScore = currentQuestion.points;
+                        score += questionScore;
+                        isCorrect = true;
+                    }
+                    // else: Incorrect, isCorrect remains false, score doesn't increase
                 }
+                 // else: Unanswered, isCorrect remains false, score doesn't increase
             }
+
+            // *** Store the detailed result for this question ***
+            userAnswersDetailed.push({
+                questionText: currentQuestion.question,
+                userAnswer: userAnswer,
+                correctAnswer: currentQuestion.correct,
+                points: currentQuestion.points,
+                achievedPoints: questionScore, // Store points achieved for this Q
+                isCorrect: isCorrect // Based on strict check for display
+            });
         }
 
-
-        // Show confirmation ONLY for manual submission (not timer/visibility) if questions are unanswered
-        if (!isTimerSubmission && !isVisibilitySubmission && unanswered.length > 0) {
-            const proceed = confirm(`Nezodpovedali ste ${unanswered.length} otázok: ${unanswered.join(", ")}. Chcete napriek tomu odovzdať test?`);
-            if (!proceed) {
-                 hasSubmitted = false; // Reset submission flag if user cancels
-                 console.log("User cancelled submission.");
-                 return; // Stop submission
-            }
-        }
-
-        // Stop the timer explicitly if submitting manually before time runs out
-         isTimerSubmission = true; // Treat manual submit as final, prevents timer overlap
-
-        // Proceed with submission
+        // Proceed with submission finalization
         const timeSpentMilliseconds = Date.now() - timeStart;
         const timeSpentSeconds = Math.floor(timeSpentMilliseconds / 1000);
         const minutesSpent = Math.floor(timeSpentSeconds / 60);
@@ -617,14 +728,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // Hide timer display
         if(timerDisplay) timerDisplay.style.display = 'none';
 
-        // --- Use currentTestQuestions ---
         const totalPoints = currentTestQuestions.reduce((sum, q) => sum + q.points, 0);
-        // Ensure score is not negative and cap at totalPoints
-        score = Math.max(0, score);
-        score = Math.min(score, totalPoints);
-
+        score = Math.max(0, score); // Ensure score isn't negative
+        score = Math.min(score, totalPoints); // Cap score at total points
         const percentage = totalPoints > 0 ? (score / totalPoints) * 100 : 0; // Avoid division by zero
 
+        // Display Results Summary + Add "View Details" button
         document.querySelector(".container").innerHTML = `
             <div class="result-section">
                 <h1>Výsledok testu (Kód: ${takenTestCode || 'N/A'})</h1>
@@ -633,19 +742,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>Percentuálne: ${percentage.toFixed(2)}%</p>
                 <p>Čas strávený: ${minutesSpent} minút a ${secondsSpent} sekúnd</p>
                 ${isVisibilitySubmission ? '<p><strong>Poznámka:</strong> Test bol automaticky ukončený, pretože ste opustili stránku alebo prepli na inú kartu/aplikáciu.</p>' : ''}
-                ${isTimerSubmission && !isVisibilitySubmission && unanswered.length === 0 ? '<p><strong>Poznámka:</strong> Test bol automaticky ukončený, pretože vypršal časový limit.</p>' : ''}
+                ${isTimerSubmission && !isVisibilitySubmission ? '<p><strong>Poznámka:</strong> Test bol ukončený z dôvodu vypršania časového limitu.</p>' : ''}
                 <button type="button" class="home-btn">Home</button>
+                <button type="button" id="view-details-btn">Zobraziť podrobnosti odpovedí</button>
+                <div id="detailed-results" style="display: none; margin-top: 20px; border-top: 1px solid #ccc; padding-top: 15px;">
+                    </div>
             </div>
         `;
 
         // --- Pass the test code to the save function ---
         saveTestResults(studentName, takenTestCode, score.toFixed(2), totalPoints, `${minutesSpent} minút a ${secondsSpent} sekúnd`);
 
+        // Add event listener for the "Home" button
         document.querySelector(".home-btn").addEventListener("click", function () {
-            // Optionally clear specific test info, keep student name maybe?
              localStorage.removeItem("currentTestCode");
-            // Redirect to index.html or student-interface.html
-            window.location.href = "student-interface.html"; // Or your main student page
+             window.location.href = "student-interface.html"; // Or your main student page
+        });
+
+        // *** Add event listener for the NEW "View Details" button ***
+        document.getElementById("view-details-btn").addEventListener("click", function (event) {
+            displayDetailedResults(userAnswersDetailed);
+            event.target.style.display = 'none'; // Hide the button after clicking
         });
 
          // Clear the sensitive items after submission and saving
@@ -654,9 +771,82 @@ document.addEventListener("DOMContentLoaded", function () {
          // localStorage.removeItem("studentName");
     }
 
-    // --- ADD A function saveTestResults (if not already globally defined) ---
-    // This function should ideally send the data to a server,
-    // but for this example, we'll just log it or store it locally (less ideal for real scenarios).
+
+    // --- *** NEW: Function to display detailed results *** ---
+    function displayDetailedResults(results) {
+        const detailsContainer = document.getElementById('detailed-results');
+        if (!detailsContainer) return;
+
+        let detailsHTML = '<h2>Podrobné výsledky:</h2>';
+
+        results.forEach((result, index) => {
+            const questionNumber = index + 1;
+            const isMultipleChoice = Array.isArray(result.correctAnswer);
+            let userAnswerDisplayHTML = '<span class="unanswered">Nezodpovedané</span>'; // Default display for unanswered
+
+            if (result.userAnswer !== null) {
+                if (isMultipleChoice) {
+                    // --- Granular highlighting for multiple choice ---
+                    const correctSet = new Set(result.correctAnswer);
+                    const userAnswers = result.userAnswer; // Should be an array if not null
+                    let styledAnswers = [];
+                    // Check if userAnswers is actually an array (it should be if not null for MC)
+                    if (Array.isArray(userAnswers)) {
+                        userAnswers.forEach(answer => {
+                            // Escape HTML entities in the answer before wrapping
+                            const escapedAnswer = answer.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, '&quot;');
+                            if (correctSet.has(answer)) {
+                                // User selected a CORRECT answer - highlight green
+                                styledAnswers.push(`<span class="correct">${escapedAnswer}</span>`);
+                            } else {
+                                // User selected an INCORRECT answer - highlight red
+                                styledAnswers.push(`<span class="incorrect">${escapedAnswer}</span>`);
+                            }
+                        });
+                         // Handle case where styledAnswers might be empty if userAnswer was [] technically not null
+                        userAnswerDisplayHTML = styledAnswers.length > 0 ? styledAnswers.join(', ') : '<span class="unanswered">Žiadna volba</span>';
+                    } else {
+                         // Fallback if userAnswer for MC is somehow not an array but not null (shouldn't happen)
+                         console.warn(`Expected array for multiple choice answer, got: ${typeof result.userAnswer} for Q${questionNumber}`);
+                         userAnswerDisplayHTML = `<span class="incorrect">${String(result.userAnswer).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, '&quot;')}</span>`;
+                    }
+                    // --- End granular highlighting ---
+                } else {
+                    // --- Single choice highlighting (remains the same) ---
+                    const highlightClass = result.isCorrect ? 'correct' : 'incorrect';
+                     const escapedAnswer = result.userAnswer.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, '&quot;');
+                    userAnswerDisplayHTML = `<span class="${highlightClass}">${escapedAnswer}</span>`;
+                    // --- End single choice highlighting ---
+                }
+            }
+
+            // Format correct answer (always use blue label style) - Escape HTML entities
+             const correctAnswerDisplay = (Array.isArray(result.correctAnswer) ? result.correctAnswer.join(', ') : result.correctAnswer)
+                                          .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, '&quot;');
+
+
+            detailsHTML += `
+                <div class="detailed-question">
+                    <p><b>Otázka ${questionNumber}:</b> ${result.questionText} <i>(Max bodov: ${result.points})</i></p>
+                    <p>Vaša odpoveď: ${userAnswerDisplayHTML}</p>
+            `;
+
+            // Show the "Correct Answer" section if the user wasn't perfectly correct.
+            // The original strict 'isCorrect' flag (meaning ALL correct chosen AND NO incorrect chosen) determines if this section shows.
+            if (!result.isCorrect) {
+                detailsHTML += `<p>Správna odpoveď: <span class="correct-answer-label">${correctAnswerDisplay}</span></p>`;
+            }
+
+             // Show points achieved for this question (optional, uncomment if desired)
+            // detailsHTML += `<p>Získané body: ${result.achievedPoints.toFixed(2)}</p>`;
+
+            detailsHTML += `</div><hr>`; // Add a separator
+        });
+
+        detailsContainer.innerHTML = detailsHTML;
+        detailsContainer.style.display = 'block'; // Show the container
+    }
+
     function saveTestResults(name, code, achievedScore, maxScore, timeTaken) {
         console.log("Saving test results (example):");
         console.log(`  Student: ${name}`);
@@ -664,7 +854,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(`  Score: ${achievedScore} / ${maxScore}`);
         console.log(`  Time: ${timeTaken}`);
 
-        // Example: Append to a list in localStorage (demonstration only, gets large quickly)
+        // Example: Append to a list in localStorage (demonstration only)
         const resultsKey = `testResults_${code}`; // Store results per test code
         let existingResults = JSON.parse(localStorage.getItem(resultsKey) || "[]");
         existingResults.push({
@@ -673,27 +863,14 @@ document.addEventListener("DOMContentLoaded", function () {
             total: maxScore,
             time: timeTaken,
             date: new Date().toISOString()
+            // You could also store 'userAnswersDetailed' here if needed later
         });
         localStorage.setItem(resultsKey, JSON.stringify(existingResults));
 
-       // In a real application, you would use fetch() to send this data to your backend server:
-       /*
-       fetch('/api/save-result', {
-           method: 'POST',
-           headers: { 'Content-Type': 'application/json' },
-           body: JSON.stringify({
-               studentName: name,
-               testCode: code,
-               score: achievedScore,
-               totalPoints: maxScore,
-               timeSpent: timeTaken,
-               submittedAt: new Date().toISOString()
-           })
-       })
-       .then(response => response.json())
-       .then(data => console.log('Result saved successfully:', data))
-       .catch(error => console.error('Error saving result:', error));
-       */
+        // Real application: Send to server using fetch()
+        /*
+        fetch('/api/save-result', { ... })
+        */
     }
 
 
@@ -702,4 +879,3 @@ document.addEventListener("DOMContentLoaded", function () {
     startTimer();
 
 }); // End of DOMContentLoaded
-// --- MODIFICATION END ---

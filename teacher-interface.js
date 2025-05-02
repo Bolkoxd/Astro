@@ -2,13 +2,13 @@
 const topicSelect = document.getElementById('topic');
 const difficultySelect = document.getElementById('difficulty');
 
-// Step 1: Test code mapping (each topic & difficulty combination has a code)
 const testCodes = {
   "solar_system_easy": { code: "AKJ8B6", testPage: "results.html" },
   "solar_system_medium": { code: "KDP83B", testPage: "results.html" },
   "solar_system_hard": { code: "I73VVJ", testPage: "results.html" },
   "History_easy": { code: "L9M13", testPage: "results.html" },
-  "things_easy": { code: "D8201A", testPage: "results.html" },
+  "Devices_easy": { code: "D8201A", testPage: "results.html" },
+  "Astronomy_easy": { code: "Z1L6PA", testPage: "results.html" }
 };
 
 // Step 2: Show the test code when the button is clicked
