@@ -76,20 +76,16 @@ function handleTestAttempt(testCode, studentName, testPage) { // testCode is the
     localStorage.setItem("currentTestCode", testCode); // Store the code being taken
     localStorage.setItem(`lastAttempt_${testCode}`, currentTime.toString());
 
-    // --- MODIFICATION START ---
     // Redirect to the appropriate test page, passing the code as a URL parameter
     const testPageUrl = `${testPage}?code=${encodeURIComponent(testCode)}`;
     window.location.href = testPageUrl;
-    // --- MODIFICATION END ---
 }
 
 function displayWaitMessage(message) {
     const waitMsg = document.getElementById('waitMsg');
     waitMsg.style.display = 'block';
-    waitMsg.innerHTML = message; // Use innerHTML because the message contains <b> tags
+    waitMsg.innerHTML = message; 
 }
 
-// **Important**: Make sure your HTML has an input field with id="testCodeInput"
-// <input type="text" id="testCodeInput" placeholder="Enter Test Code">
 
     
