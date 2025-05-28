@@ -461,7 +461,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentTestQuestions = currentTest.questions; // The array of questions for *this* test
     let timeRemaining = currentTest.timeLimit; // Use the time limit specific to this test
 
-    // --- REST OF YOUR Test.js CODE ---
     // Shuffle the selected questions array.
     currentTestQuestions.sort(() => Math.random() - 0.5);
 
@@ -759,7 +758,6 @@ document.addEventListener("DOMContentLoaded", function () {
              window.location.href = "student-interface.html"; // Or your main student page
         });
 
-        // *** Add event listener for the NEW "View Details" button ***
         document.getElementById("view-details-btn").addEventListener("click", function (event) {
             displayDetailedResults(userAnswersDetailed);
             event.target.style.display = 'none'; // Hide the button after clicking
@@ -867,10 +865,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         localStorage.setItem(resultsKey, JSON.stringify(existingResults));
 
-        // Real application: Send to server using fetch()
-        /*
-        fetch('/api/save-result', { ... })
-        */
     }
 
 
